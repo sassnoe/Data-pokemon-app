@@ -4,12 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="icon" href="" />
     <title>Pokémon Data</title>
   </head>
   <body>
-    <div id="data">
-      <p>Type: <span id="pkmnType"></span></p>
-    </div>
+    <header>
+      <h1>Pokémon Information Chart</h1>
+    </header>
+    <main>
+      <section id="pokémon" class="grid-container"></section>
+    </main>
+    <footer>
+      <p>Pokémon Data by Joakim</p>
+    </footer>
+    <dialog>
+      <h2 id="dialog-name"></h2>
+      <h3 id="dialog-description"></h3>
+      <p id="dialog-dexindex"></p>
+      <p id="dialog-type"></p>
+      <p id="dialog-subtype"></p>
+      <p id="dialog-weaknesses"></p>
+      <p id="dialog-ability"></p>
+      <p id="dialog-gender"></p>
+      <p id="dialog-height"></p>
+      <p id="dialog-weight"></p>
+      <p id="dialog-generation"></p>
+      <p id="dialog-spilversion"></p>
+      <p id="dialog-canEvolve"></p>
+      <p id="statsHP"></p>
+      <p id="statsAttack"></p>
+      <p id="statsDefence"></p>
+      <p id="statsSpecialAttack"></p>
+      <p id="statsSpecialDefence"></p>
+      <p id="statsSpeed"></p>
+      <img id="dialog-image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/197.png" alt="" />
+      <img id="dialog-footprint" src="https://archives.bulbagarden.net/media/upload/4/40/F0197.png" alt="" />
+    </dialog>
     <script src="pokémon.js"></script>
   </body>
 </html>
+
+<!-- name: tekst -->
+<!-- description: tekst -->
+<!-- ability: tekst -->
+<!-- image: url -->
+<!-- footprint: url (til et andet billede) -->
+<!-- dexindex: tal -->
+<!-- type: tekst – begrænset til: fire, ice, flying, etc … -->
+<!-- subtype: tekst -->
+<!-- weaknesses: tekst – en kommasepareret liste over types -->
+<!-- gender: tekst: male eller female -->
+<!-- weight: tal – vægt i gram
+height: tal – højde i cm
+generation: tal
+spilversion: tekst
+canEvolve: boolean -->
+<!-- statsHP: tal 0-10
+statsAttack: tal 0-10
+statsDefence: tal 0-10
+statsSpecialAttack: tal 0-10
+statsSpecialDefence: tal 0-10
+statsSpeed: 0-10 -->

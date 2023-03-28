@@ -1,25 +1,22 @@
 {
   "name": "Umbreon",
-  "desctiption": [
-    "When exposed to the moon's aura, the rings on its body glow faintly and it gains a mysterious power.",
-    "When darkness falls, the rings on the body begin to glow, striking fear in the hearts of anyone nearby."
-  ],
+  "description": "When exposed to the moon's aura, the rings on its body glow faintly and it gains a mysterious power.",
   "ability": "Synchronize",
   "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/197.png",
   "footprint": "https://archives.bulbagarden.net/media/upload/4/40/F0197.png",
-  "dexindex": "#0197",
+  "dexindex": 197,
   "type": "Dark",
-  "subtype": null,
-  "weaknesses": ["Fairy", "Bug", "Fighting"],
-  "gender": "Male/Female",
+  "subtype": "Moonlight Pokémon",
+  "weaknesses": "Fairy, Bug, Fighting",
+  "gender": "87.5% Male, 12.5% Female",
   "weight": "27kg",
   "height": "1m",
-  "generation": "II",
+  "generation": 2,
   "canEvolve": false,
-  "statsHp": 6,
-  "statsAttack": 4,
-  "statsDefence": 7,
-  "statsSpecialAttack": 4,
-  "statsSpecialDefence": 8,
-  "statsSpeed": 4
+  "statsHP": 95,
+  "statsAttack": 65,
+  "statsDefence": 110,
+  "statsSpecialAttack": 60,
+  "statsSpecialDefence": 130,
+  "statsSpeed": 65
 }
