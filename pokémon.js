@@ -4,42 +4,38 @@ window.addEventListener("load", start);
 
 async function start() {
   console.log("start running");
-  const pokemon = await getPokémon("https://cederdorff.github.io/dat-js/05-data/pokemons.json");
+  const pokemonList = await getPokemon("https://cederdorff.github.io/dat-js/05-data/pokemons.json");
+  // const pokemonList = await getPokémon("raw.githubusercontent.com/sassnoe/Data-pokemon-app/main/test.json");
 
-  showAllPokémon(pokemon);
+  showAllPokemon(pokemonList);
 }
 
-async function getPokémon(url) {
+function showAllPokemon(pokemonList) {
+  for (const pokemon of pokemonList) {
+    showPokemon(pokemon);
+  }
+}
+
+async function getPokemon(url) {
   const response = await fetch(url);
   const data = await response.json();
   return data;
 }
 
-function showAllPokémon(pokemonList) {
-  for (const pokemon of pokemonList) {
-    showPokémon(pokemon);
-  }
-}
-
-function showPokémon(pokémon) {
-  document.querySelector("#pokémon").insertAdjacentHTML(
+function showPokemon(pokemon) {
+  document.querySelector("#pokemon").insertAdjacentHTML(
     "beforeend",
     /*html*/ `
     <article>
-        <h2>${pokémon.name}</h2>
-        <img src = ${pokémon.image}/>
+        <h2>${pokemon.name}</h2>
+        <h3>${pokemon.type}</h3>
+        <img src="${pokemon.image}"/>
     </article>`
   );
 
   document.querySelector("#pokemon article:last-child").addEventListener("click", pokemonClicked);
 
   function pokemonClicked() {
-    document.querySelector;
-    showPokémonModal(pokemon);
+    // document.querySelector
   }
-}
-
-function showPokémonModal(pokemon) {
-  document.querySelector("#pokemon-image").src = pokemon.image;
-  document.querySelector("#pokemon").showModal();
 }
