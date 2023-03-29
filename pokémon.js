@@ -2,11 +2,11 @@
 
 window.addEventListener("load", start);
 
-function start() {
+async function start() {
   console.log("start running");
-  const umbreon = getPokémon("https://cederdorff.github.io/dat-js/05-data/pokemons.json");
+  const pokemon = await getPokémon("https://cederdorff.github.io/dat-js/05-data/pokemons.json");
 
-  showPokémon(umbreon);
+  showAllPokémon(pokemon);
 }
 
 async function getPokémon(url) {
@@ -15,14 +15,30 @@ async function getPokémon(url) {
   return data;
 }
 
+function showAllPokémon(pokemonList) {
+  for (const pokemon of pokemonList) {
+    showPokémon(pokemon);
+  }
+}
+
 function showPokémon(pokémon) {
-  document.querySelector("pokémon").insertAdjacentHTML(
+  document.querySelector("#pokémon").insertAdjacentHTML(
     "beforeend",
     /*html*/ `
-    
     <article>
         <h2>${pokémon.name}</h2>
         <img src = ${pokémon.image}/>
     </article>`
   );
+
+  document.querySelector("#pokemon article:last-child").addEventListener("click", pokemonClicked);
+
+  function pokemonClicked() {
+    showPokémonModal(pokemon);
+  }
+}
+
+function showPokémonModal(pokemon) {
+  document.querySelector("#pokemon-image").src = pokemon.image;
+  document.querySelector("#pokemon").showModal();
 }
