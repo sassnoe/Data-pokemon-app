@@ -34,6 +34,7 @@ function showPokémon(pokémon) {
   document.querySelector("#pokemon article:last-child").addEventListener("click", pokemonClicked);
 
   function pokemonClicked() {
+    document.querySelector;
     showPokémonModal(pokemon);
   }
 }
