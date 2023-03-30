@@ -4,7 +4,7 @@
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* ---------- general styling ---------- */
+/* ====== General HTML Styling ====== */
 
 html {
   color: black;
@@ -42,7 +42,23 @@ img {
   height: auto;
 }
 
-/* ---------- header styling ---------- */
+button {
+  font-weight: 300;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 0;
+  color: var(--white);
+  background-color: rgba(11, 10, 12, 0.918);
+  letter-spacing: 0.05em;
+  padding: 0.5em 1em;
+  width: 100%;
+  margin-left: 25%;
+  max-width: 380px;
+}
+
+/* ====== header styling ====== */
 
 header {
   background-color: red;
@@ -58,7 +74,7 @@ header {
   text-shadow: 3px 3px 3px black;
 }
 
-/* ---------- footer styling ---------- */
+/* ====== Footer Styling ====== */
 
 footer {
   background-color: black;
@@ -67,7 +83,7 @@ footer {
   text-align: center;
 }
 
-/* ---------- main page styling ---------- */
+/* ====== Main Styling ====== */
 
 main {
   background: var(--white);
@@ -75,7 +91,7 @@ main {
   padding: 137px 0 0;
 }
 
-/* ---------- grid container styling ---------- */
+/* ====== Grid Container Styling ====== */
 
 .grid-container {
   display: grid;
@@ -108,63 +124,7 @@ main {
   }
 }
 
-/* ---------- grid item styling ---------- */
-
-.grid-item {
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-  padding: 1.5em;
-  background-color: var(--white);
-  transition: 0.5s;
-  animation: fadeIn 0.5s;
-  cursor: pointer;
-}
-
-.grid-item:hover {
-  box-shadow: 0 8px 16px 0 var(--green);
-}
-
-.grid-item img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
-.grid-item p {
-  margin: 0.3em 0;
-}
-
-/* ---------- buttons in grid container ---------- */
-
-.grid-container .btns {
-  padding: 1em 0 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-}
-
-.grid-container .btns button {
-  width: 100%;
-}
-
-/* ---------- form styling ---------- */
-
-button {
-  font-weight: 300;
-  font-size: 1em;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  border-radius: 0;
-  color: var(--text-color-light);
-  background-color: var(--green);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.5em 1em;
-  width: 100%;
-  max-width: 380px;
-}
-
-/* ---------- dialog styling ---------- */
+/* ====== Dialog Styling ====== */
 
 #pokemon {
   margin-top: 2%;
@@ -180,11 +140,13 @@ button {
   border-radius: 50px;
 }
 
+.pokemon-card-view:hover {
+  transform: scale(105%);
+}
+
 dialog {
   position: relative;
-  background-color: rgba(84, 184, 81, 0.466);
-  /* border:; */
-  /* overflow: hidden; */
+  background-color: rgba(255, 255, 255, 0.664);
   margin: auto;
   width: 40vw;
   top: 10%;
@@ -202,10 +164,11 @@ dialog::backdrop {
 }
 
 .button-close {
-  text-align: center;
+  display: block;
+  left: 50%;
 }
 
-/* styling modal */
+/* ====== Modal Styling ====== */
 
 #pokemon-name {
   text-align: center;
@@ -227,7 +190,7 @@ dialog::backdrop {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 5%;
 }
 
 #pokemon-stats {
@@ -238,44 +201,3 @@ dialog::backdrop {
   top: 0;
   left: 50%;
 }
-
-/* #pokemon-name {
-
-}      
-#pokemon-name {
-
-}      
-#pokemon-name {
-
-}      
-#pokemon-name {
-
-}      
-#pokemon-name {
-
-}      
-#pokemon-name {
-
-}  */
-
-/* 
-<dialog id="pokemon-dialog">
-        <h2 id="pokemon-name">pokemon name </h2>
-        <h3 id="pokemon-dexindex">#0${pokemon.dexindex}</h3>
-        <img id="pokemon-image" src="${pokemon.image}"/>
-        <li id="pokemon-subtype">Subtype: ${pokemon.subtype}</li>
-        <li id="pokemon-weaknesses">Weaknesses: ${pokemon.weaknesses}</li>
-        <li id="pokemon-ability">Ability: ${pokemon.ability}</li>
-        <li id="pokemon-gender">Gender: ${pokemon.gender}</li>
-        <li id="pokemon-height">Height: ${pokemon.height}</li>
-        <li id="pokemon-weight">Weight: ${pokemon.weight}</li>
-        <li id="pokemon-generation">Generation: ${pokemon.generation}</li>
-        <li id="pokemon-canEvolve">Can Evolve: ${pokemon.canEvolve}</li>
-          <div id="pokemon-stats">
-            <li id="pokemon-hp">HP: ${pokemon.statsHP}</li>
-            <li id="pokemon-attack">Attack: ${pokemon.statsAttack}</li>
-            <li id="pokemon-defence">Defence: ${pokemon.statsDefence}</li>
-            <li id="pokemon-specialattack">SP.Attack: ${pokemon.statsSpecialAttack}</li>
-            <li id="pokemon-defence">SP.Defence: ${pokemon.statsSpecialDefence}</li>
-            <li id="pokemon-speed">Speed: ${pokemon.statsSpeed}</li>
-        </div> */

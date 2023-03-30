@@ -42,7 +42,7 @@ function displayPokemon(pokemon) {
     document.querySelector("#pokemon-name").textContent = pokemon.name;
     document.querySelector("#pokemon-image").src = pokemon.image;
     document.querySelector("#pokemon-footprint").src = pokemon.footprint;
-    document.querySelector("#pokemon-dexindex").textContent = pokemon.dexindex;
+    document.querySelector("#pokemon-dexindex").textContent = `Dexnumber: #${pokemon.dexindex}`;
     document.querySelector("#pokemon-subtype").textContent = pokemon.subtype;
     document.querySelector("#pokemon-weaknesses").textContent = `Weaknesses: ${pokemon.weaknesses}`;
     document.querySelector("#pokemon-ability").textContent = `Abilities: ${pokemon.ability}`;
@@ -65,17 +65,17 @@ function displayPokemon(pokemon) {
 }
 
 function evolution(pokemon) {
-  let HTML = "";
+  let evolutionhtml = "";
   if (pokemon.canEvolve === false) {
-    HTML = /*html*/ `
+    evolutionhtml = /*html*/ `
         ${pokemon.name} is the final evolution.
     `;
   } else {
-    HTML = /*html*/ `
+    evolutionhtml = /*html*/ `
         ${pokemon.name} has one or more evolutions!
     `;
   }
-  return HTML;
+  return evolutionhtml;
 }
 
 function closeModal() {
