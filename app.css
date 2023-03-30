@@ -1,10 +1,11 @@
-/* ---------- root variables ---------- */
+/* ====== Root variables ====== */
 :root {
   --white: #f2f2f2;
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ---------- general styling ---------- */
+
 html {
   color: black;
   font-family: var(--font-family);
@@ -20,18 +21,20 @@ body {
 h1 {
   font-size: 2em;
   font-weight: 500;
-  letter-spacing: 0.1px;
+  letter-spacing: 0.1em;
   text-align: center;
 }
 
 h2 {
   font-weight: 500;
   letter-spacing: 0.1px;
+  text-align: center;
 }
 
 h3 {
   font-weight: 500;
   letter-spacing: 0.1px;
+  text-align: center;
 }
 
 img {
@@ -40,15 +43,19 @@ img {
 }
 
 /* ---------- header styling ---------- */
+
 header {
   background-color: red;
   color: var(--white);
-  padding: 1em;
+  padding: 0.1em;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
+
+  font-family: "Pokemon Solid", sans-serif;
+  text-shadow: 3px 3px 3px black;
 }
 
 /* ---------- footer styling ---------- */
@@ -61,25 +68,15 @@ footer {
 }
 
 /* ---------- main page styling ---------- */
+
 main {
   background: var(--white);
   animation: fadeIn 0.4s;
   padding: 137px 0 0;
 }
 
-/* ---------- animations ---------- */
-/* fade in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 /* ---------- grid container styling ---------- */
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -98,11 +95,13 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 @media (min-width: 1200px) {
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
 @media (min-width: 1500px) {
   .grid-container {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -148,13 +147,6 @@ main {
 }
 
 /* ---------- form styling ---------- */
-/* input form styling */
-form {
-  margin: 2em auto 0;
-  background-color: var(--light-green);
-  padding: 1em 1em 2em;
-  text-align: center;
-}
 
 button {
   font-weight: 300;
@@ -172,23 +164,32 @@ button {
   max-width: 380px;
 }
 
-input {
-  margin: 1em auto;
-  width: 100%;
-  max-width: 350px;
-  padding: 1em;
-  border: 2px solid var(--green);
-  display: block;
-  background: var(--white);
-}
-
 /* ---------- dialog styling ---------- */
 
+#pokemon {
+  margin-top: 2%;
+}
+
+#pokemon img {
+  object-fit: contain;
+}
+
+.pokemon-card-view {
+  background-color: cornflowerblue;
+  border: 5px inset black;
+  border-radius: 50px;
+}
+
 dialog {
-  border-color: var(--green);
-  background-color: var(--light-green);
-  width: 65vw;
+  position: relative;
+  background-color: rgba(84, 184, 81, 0.466);
+  /* border:; */
+  /* overflow: hidden; */
+  margin: auto;
+  width: 40vw;
+  top: 10%;
   padding: 2em 1em;
+  backdrop-filter: blur(5px);
 }
 
 dialog::backdrop {
@@ -200,13 +201,81 @@ dialog::backdrop {
   grid-template-columns: 1fr 1fr;
 }
 
-dialog h4 {
-  margin-bottom: 0;
+.button-close {
+  text-align: center;
 }
-dialog ul {
-  margin: 0.5em 0 1em;
-  padding-inline-start: 1.5em;
+
+/* styling modal */
+
+#pokemon-name {
+  text-align: center;
 }
-dialog p {
-  margin: 0.5em 0 1em;
+
+#pokemon-dexindex {
+  text-align: center;
 }
+
+#pokemon-image {
+  display: grid;
+  grid-area: 1;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+#pokemon-footprint {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+#pokemon-stats {
+  display: grid;
+  grid-area: 2;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 50%;
+}
+
+/* #pokemon-name {
+
+}      
+#pokemon-name {
+
+}      
+#pokemon-name {
+
+}      
+#pokemon-name {
+
+}      
+#pokemon-name {
+
+}      
+#pokemon-name {
+
+}  */
+
+/* 
+<dialog id="pokemon-dialog">
+        <h2 id="pokemon-name">pokemon name </h2>
+        <h3 id="pokemon-dexindex">#0${pokemon.dexindex}</h3>
+        <img id="pokemon-image" src="${pokemon.image}"/>
+        <li id="pokemon-subtype">Subtype: ${pokemon.subtype}</li>
+        <li id="pokemon-weaknesses">Weaknesses: ${pokemon.weaknesses}</li>
+        <li id="pokemon-ability">Ability: ${pokemon.ability}</li>
+        <li id="pokemon-gender">Gender: ${pokemon.gender}</li>
+        <li id="pokemon-height">Height: ${pokemon.height}</li>
+        <li id="pokemon-weight">Weight: ${pokemon.weight}</li>
+        <li id="pokemon-generation">Generation: ${pokemon.generation}</li>
+        <li id="pokemon-canEvolve">Can Evolve: ${pokemon.canEvolve}</li>
+          <div id="pokemon-stats">
+            <li id="pokemon-hp">HP: ${pokemon.statsHP}</li>
+            <li id="pokemon-attack">Attack: ${pokemon.statsAttack}</li>
+            <li id="pokemon-defence">Defence: ${pokemon.statsDefence}</li>
+            <li id="pokemon-specialattack">SP.Attack: ${pokemon.statsSpecialAttack}</li>
+            <li id="pokemon-defence">SP.Defence: ${pokemon.statsSpecialDefence}</li>
+            <li id="pokemon-speed">Speed: ${pokemon.statsSpeed}</li>
+        </div> */

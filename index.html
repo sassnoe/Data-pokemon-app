@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet" />
     <link rel="stylesheet" href="app.css" />
     <link rel="icon" href="" />
-    <title>Pokémon Data</title>
+    <title>Pokémon Data App</title>
   </head>
   <body>
     <header>
@@ -15,27 +16,33 @@
     <main>
       <section id="pokemon" class="grid-container"></section>
       <dialog id="pokemon-dialog">
-        <h2 id="pokemon-name"></h2>
-        <h3 id="pokemon-description"></h3>
-        <p id="pokemon-dexindex"></p>
-        <p id="pokemon-type"></p>
-        <p id="pokemon-subtype"></p>
-        <p id="pokemon-weaknesses"></p>
-        <p id="pokemon-ability"></p>
-        <p id="pokemon-gender"></p>
-        <p id="pokemon-height"></p>
-        <p id="pokemon-weight"></p>
-        <p id="pokemon-generation"></p>
-        <p id="pokemon-spilversion"></p>
-        <p id="pokemon-canEvolve"></p>
-        <p id="pokemon-statsHP"></p>
-        <p id="pokemon-statsAttack"></p>
-        <p id="pokemon-statsDefence"></p>
-        <p id="pokemon-statsSpecialAttack"></p>
-        <p id="pokemon-statsSpecialDefence"></p>
-        <p id="pokemon-statsSpeed"></p>
-        <img id="pokemon-image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/197.png" alt="" />
-        <img id="pokemon-footprint" src="https://archives.bulbagarden.net/media/upload/4/40/F0197.png" alt="" />
+        <h2 id="pokemon-name">pokemon name </h2>
+        <h3 id="pokemon-dexindex">#0${pokemon.dexindex}</h3>
+        <img id="pokemon-image" src="${pokemon.image}"/>
+        <img id="pokemon-footprint" src="${pokemon.footprint}"></img>
+        <ul>
+          <li id="pokemon-subtype">Subtype: ${pokemon.subtype}</li>
+          <li id="pokemon-weaknesses">Weaknesses: ${pokemon.weaknesses}</li>
+          <li id="pokemon-ability">Ability: ${pokemon.ability}</li>
+          <li id="pokemon-gender">Gender: ${pokemon.gender}</li>
+          <li id="pokemon-height">Height: ${pokemon.height}</li>
+          <li id="pokemon-weight">Weight: ${pokemon.weight}</li>
+          <li id="pokemon-generation">Generation: ${pokemon.generation}</li>
+          <li id="pokemon-canEvolve">Can Evolve: ${pokemon.canEvolve}</li>
+        </ul>
+            <div id="pokemon-stats">
+              <ul>
+                <li id="pokemon-hp">HP: ${pokemon.statsHP}</li>
+                <li id="pokemon-attack">Attack: ${pokemon.statsAttack}</li>
+                <li id="pokemon-defence">Defence: ${pokemon.statsDefence}</li>
+                <li id="pokemon-specialattack">SP.Attack: ${pokemon.statsSpecialAttack}</li>
+                <li id="pokemon-specialdefence">SP.Defence: ${pokemon.statsSpecialDefence}</li>
+                <li id="pokemon-speed">Speed: ${pokemon.statsSpeed}</li>
+              </ul>
+            </div>
+        <button id="button-close">Close</button>
+        <!-- <img id="pokemon-image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/197.png" alt="" />
+        <img id="pokemon-footprint" src="https://archives.bulbagarden.net/media/upload/4/40/F0197.png" alt="" /> -->
       </dialog>
     </main>
     <footer>
